@@ -17,9 +17,9 @@ Rectangle {
 	
 	Timer {
 		id: gameTimer
-        interval: 200; running: false; repeat: true
-        onTriggered: nextStep()
-     }
+		interval: 200; running: false; repeat: true
+		onTriggered: nextStep()
+	}
 	
 	Column {
 		spacing: 2
@@ -28,11 +28,11 @@ Rectangle {
 			Rectangle {
 				color: startButton.containsMouse ? "#178FC7" : "#1373A1"
 				radius: 20.0
-                width: 199; height: 50
-                Text {
+				width: 199; height: 50
+				Text {
 					id: playButtonText
 					anchors.centerIn: parent
-                    font.pointSize: 24; text: "Start"
+					font.pointSize: 24; text: "Start"
 					color: "white"
 				} 
 				MouseArea {
@@ -49,8 +49,8 @@ Rectangle {
 			Rectangle { 
 				color: resetButton.containsMouse ? "#178FC7" : "#1373A1"
 				radius: 20.0
-                width: 199; height: 50
-                Text {
+				width: 199; height: 50
+				Text {
 					anchors.centerIn: parent
 					font.pointSize: 24; text: "Reset"
 					color: "white"
@@ -65,32 +65,35 @@ Rectangle {
 		}
 		
 		Rectangle {
-			 width: 400; height: 400; color: "black"
-
-			 Grid {
-				 x: 0; y: 0
-				 rows: 20; columns: 20; spacing: 1
-
-				 Repeater { model: 400
-							Rectangle { width: 19; height: 19
-										color: "#1aa1e1"
-										opacity: getCellOpacity(result[index], cell.containsMouse) 
+			width: 400; height: 400; color: "black"
+			Grid {
+				x: 0; y: 0
+				rows: 20; columns: 20; spacing: 1
+				Repeater { 
+					model: 400
+					Rectangle { 
+						width: 19; height: 19
+						color: "#1aa1e1"
+						opacity: getCellOpacity(result[index], cell.containsMouse) 
 										
-										MouseArea {
-											id: cell
-											hoverEnabled: true
-											anchors.fill: parent
-											onClicked: {
-												var temp = result;
-												temp[index] = !temp[index];
-												result = temp;
-											}
-										}
+						MouseArea {
+							id: cell
+							hoverEnabled: true
+							anchors.fill: parent
+							onClicked: {
+								var temp = result;
+								temp[index] = !temp[index];
+								result = temp;
+							}
+						}
 
-										Text { text: ""
-											   color: "white"
-											   font.pointSize: 10
-											   anchors.centerIn: parent } }
+						Text {
+							text: ""
+							color: "white"
+							font.pointSize: 10
+							anchors.centerIn: parent
+						}
+					}
 				}
 			}
 		}
