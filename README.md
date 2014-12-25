@@ -5,16 +5,16 @@ After reading the book "Programming in Haskell" by Graham Huttom, I wanted to  g
 
 ![Game of life running](http://tommiseppanen.github.io/screenshots/screenshot2.png)
 
-#Requirements
+##Requirements
 - GHC 7.4 or later
 - Qt 5.3.0 SDK or later
 - HsQML
 
-#Controls
+##Controls
 - use Start/Stop button to start and stop simulation
 - use Reset to reset simulation to initial state
 - use mouse left click to change individual cell states
 
-#Links
+##Links
 - [Conway's Game of Life](http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 - [HsQML](http://www.gekkou.co.uk/software/hsqml/)
